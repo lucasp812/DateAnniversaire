@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DateAnniversaire{% endblock %}
+
+{% block body %}
+    <h1>DateAnniversaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ date_anniversaire.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ date_anniversaire.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ date_anniversaire.date ? date_anniversaire.date|date('d-m-Y') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_date_anniversaire_index') }}">Retourner a la liste</a>
+
+    <a href="{{ path('app_date_anniversaire_edit', {'id': date_anniversaire.id}) }}">modifer</a>
+
+    {{ include('date_anniversaire/_delete_form.html.twig') }}
+{% endblock %}

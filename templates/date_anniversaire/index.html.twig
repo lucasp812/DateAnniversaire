@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Date Anniversaire {% endblock %}
+
+{% block body %}
+    <h1>Date d'anniversaire </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for date_anniversaire in date_anniversaires %}
+            <tr>
+                <td>{{ date_anniversaire.nom }}</td>
+                <td>{{ date_anniversaire.prenom }}</td>
+                <td>{{ date_anniversaire.date ? date_anniversaire.date|date('d-m-Y') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_date_anniversaire_show', {'id': date_anniversaire.id}) }}">Voir</a>
+                    <a href="{{ path('app_date_anniversaire_edit', {'id': date_anniversaire.id}) }}"> Modifer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_date_anniversaire_new') }}">Ajoutez une nouvelle date</a>
+{% endblock %}

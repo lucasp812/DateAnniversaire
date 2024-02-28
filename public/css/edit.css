@@ -1,0 +1,67 @@
+/* styles_input.css */
+
+/* Styles pour les champs de formulaire */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Pour inclure la bordure et le padding dans la largeur */
+    transition: border-color 0.3s; /* Transition pour le changement de couleur de la bordure */
+}
+
+/* Styles pour les champs de formulaire en focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Changement de couleur de la bordure lorsqu'un champ est en focus */
+    outline: none; /* Suppression de l'effet de focus par défaut */
+}
+
+/* Styles pour les champs de formulaire invalides */
+input:invalid,
+textarea:invalid {
+    border-color: #dc3545; /* Couleur de la bordure pour les champs invalides */
+}
+
+/* Styles pour les messages d'erreur associés aux champs invalides */
+input:invalid + .error-message,
+textarea:invalid + .error-message {
+    display: block; /* Affichage du message d'erreur */
+    color: #dc3545; /* Couleur du texte du message d'erreur */
+    font-size: 0.8em; /* Taille de police réduite pour le message d'erreur */
+    margin-top: 5px; /* Espacement supplémentaire au-dessus du message d'erreur */
+}
+
+/* Styles pour les messages d'erreur */
+.error-message {
+    display: none; /* Masquage des messages d'erreur par défaut */
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

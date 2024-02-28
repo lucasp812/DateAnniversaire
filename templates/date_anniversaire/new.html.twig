@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New DateAnniversaire{% endblock %}
+
+{% block body %}
+    <h1>Create new DateAnniversaire</h1>
+
+    {{ include('date_anniversaire/_form.html.twig') }}
+
+    <a href="{{ path('app_date_anniversaire_index') }}">Retourner a la liste</a>
+{% endblock %}

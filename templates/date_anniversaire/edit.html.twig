@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+    {% block stylesheets %}
+        <link href="{{asset("css/edit.css")}}" rel="stylesheet"/>
+        {% endblock %}
+
+{% block title %}Edit DateAnniversaire{% endblock %}
+
+{% block body %}
+    <h1>Modifier la  Date d'anniversaire</h1>
+
+  
+
+   
+
+    <div>
+
+
+    {{ include('date_anniversaire/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <br>
+
+    {{ include('date_anniversaire/_delete_form.html.twig') }}
+
+<br>
+      <a href="{{ path('app_date_anniversaire_index') }}">Retourner a la liste</a>
+
+    </div>
+{% endblock %}
